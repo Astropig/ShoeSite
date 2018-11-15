@@ -16,7 +16,8 @@ io.on('connection', (socket) => {
 
    socket.on('createMessage', (message) =>{
        io.emit('newMessage', {
-           from: message.from
+           from: message.from,
+           text: message.text
        });
    })
 });

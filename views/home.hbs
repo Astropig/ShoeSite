@@ -68,7 +68,7 @@
 <div id="colorSquare">
 
 </div>
-<form action="/" method="GET">
+<form id="messegeCreator" action="/" method="GET">
     <br>
     <input type="radio" id="crawlBox" name="effectType" value="Crawl">Crawl<br>
     <input type="radio" id="theaterBox" name="effectType" value="Theater">Theater<br>
@@ -79,6 +79,8 @@
     <input id="colorString" type="text" name="colorValue" value=" " required><br>
     <input type="submit" value="Submit">
 </form>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 <script src="/socket.io/socket.io.js/"></script>
 <script >
     var socket = io();
@@ -86,7 +88,20 @@
         console.log("conencted");
     });
     socket.on('newMessage', function (message) {
+        var head = jQuery('#text');
+        head.text(`${message.text}`);
         console.log(message);
+    });
+
+    jQuery('#messegeCreator').on('submit', function (e) {
+       e.preventDefault();
+
+       socket.emit('createMessage',{
+           from: 'user',
+           text: jQuery('[name=colorValue]').val()
+       },function(){
+
+       });
     });
     const redSlider = document.getElementById('redRange');
     const greenSlider = document.getElementById('greenRange');
