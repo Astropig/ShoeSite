@@ -85,9 +85,8 @@
     socket.on('connect', function() {
         console.log("conencted");
     });
-    socket.on('newEmail',function(email) {
-        console.log("new email", email);
-        document.getElementById('text').textContent = email.toString();
+    socket.on('newMessage', function (message) {
+        console.log(message);
     });
     const redSlider = document.getElementById('redRange');
     const greenSlider = document.getElementById('greenRange');

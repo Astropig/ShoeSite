@@ -14,9 +14,11 @@ var mytext = " ";
 io.on('connection', (socket) => {
    console.log("new user");
 
-   io.emit('newEmail', mytext);
-
-
+   socket.on('createMessage', (message) =>{
+       io.emit('newMessage', {
+           from: message.from
+       });
+   })
 });
 
 app.use((req, res, next) => {
@@ -31,10 +33,11 @@ app.use((req, res, next) => {
     });
     next();
 });
-
+//http.createServer
 app.get('/', (req, res) => {
     mytext = req.query.colorValue;
     console.log(mytext);
+
     res.render('home.hbs',{
         currentColor: 'Current Value: ' + mytext
     });
