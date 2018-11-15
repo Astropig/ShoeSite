@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../htmlFiels/main.css">
+    <style>
+        .slidecontainer {
+            width: 100%;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 50%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+        #redRange::-webkit-slider-thumb{
+            background: #f70000;
+        }
+        #greenRange::-webkit-slider-thumb{
+            background: #4CAF50;
+        }
+        #blueRange::-webkit-slider-thumb{
+            background: #0800ff;
+        }
+        #colorSquare {
+            height: 100px;
+            width: 100px;
+            background-color: #555;
+            border: 2px black solid;
+        }
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1 id="text">{{currentColor}}</h1>
+
+<div class="slidecontainer">
+
+    <input type="range" min="1" max="255" value="0" class="slider" id="redRange" oninput ="sliderChange()">
+    <br>
+    <input type="range" min="1" max="255" value="0" class="slider" id="greenRange" oninput ="sliderChange()">
+    <br>
+    <input type="range" min="1" max="255" value="0" class="slider" id="blueRange" oninput ="sliderChange()">
+    <br>
+</div>
+
+<div id="colorSquare">
+
+</div>
+<form action="/" method="GET">
+    <br>
+    <input type="radio" id="crawlBox" name="effectType" value="Crawl">Crawl<br>
+    <input type="radio" id="theaterBox" name="effectType" value="Theater">Theater<br>
+    <input type="radio" id="solidBox" name="effectType" value="Solid">Solid<br>
+    <input type="radio" id="rainbowBox" name="effectType" value="Rainbow" checked>Rainbow<br>
+    <input type="range" min="1" max="100" value="0" id="speedValue" oninput ="sliderChange()">
+    <p>Output</p>
+    <input id="colorString" type="text" name="colorValue" value=" " required><br>
+    <input type="submit" value="Submit">
+</form>
+<script>
+    const redSlider = document.getElementById('redRange');
+    const greenSlider = document.getElementById('greenRange');
+    const blueSlider = document.getElementById('blueRange');
+    const colorBox = document.getElementById('colorSquare');
+    const output = document.getElementById('colorString');
+    const speed = document.getElementById('speedValue');
+    const crawlBox = document.getElementById('crawlBox');
+    const theaterBox = document.getElementById('theaterBox');
+    const solidBox = document.getElementById('solidBox');
+    const rainbowBox = document.getElementById('rainbowBox');
+
+
+    function sliderChange() {
+        var r = redSlider.value;
+        var g = greenSlider.value;
+        var b = blueSlider.value;
+        var init = 'r';
+        if(crawlBox.checked){
+            init = 'c';
+        }else if(theaterBox.checked){
+            init = 't';
+        }else if(solidBox.checked){
+            init = 's';
+        }else {
+            init = 'r';
+        }
+
+        output.value = init+ " " + r +" " + g +" " + b + " " + speed.value;
+        console.log("Red Range:", r);
+        console.log("Green Range:", g);
+        console.log("Blue Range:", b);
+        colorBox.style.background =  "rgb(" +r+ "," +g+ "," +b+ ")";
+    }
+</script>
+</body>
+</html>
