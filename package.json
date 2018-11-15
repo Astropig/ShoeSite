@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "handle": "^1.0.0",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.1",
+    "socket.io": "^2.1.1"
   }
 }
