@@ -20,12 +20,20 @@ io.on('connection', (socket) => {
            text: message.text
        });
        var log = message.text;
-       /*try {
-           fs.unlink('server.log');
-           fs.appendFile('server.log', log );
-       }catch (e) {
-           fs.appendFile('server.log', log );
-       }*/
+       fs.unlink('server.txt', (err)=>{
+           if (err){
+               console.log(err);
+           }
+           fs.writeFile('server.txt', message.text, (err) => {
+               if (err) {
+                   console.log(err);
+               } else {
+
+                   console.log('Data uploaded')
+               }
+           });
+       });
+
 
    })
 });
@@ -39,24 +47,15 @@ app.use((req, res, next) => {
 });
 //http.createServer
 app.get('/', (req, res) => {
-    /*try {
-        fs.readFile('server.log', function read(err,data) {
-            if (err){
-                throw err;
-            }
-            res.render('home.hbs',{
-                currentColor: 'Current Value: ' + data
-            });
-            console.log(data);
-
+    fs.readFile('server.txt', function read(err,data) {
+        if (err){
+            console.log(err);
+        }
+        res.render('home.hbs',{
+            currentColor: 'Current Value: ' + data
         });
-    }catch (e) {
-        console.log('undifined');
-    }*/
-    res.render('home.hbs',{
-        currentColor: 'Current Value: ' + 'bob'
-    });
 
+    });
 
 });
 server.listen(port, () => {

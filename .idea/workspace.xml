@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="025fb043-f404-43fc-927f-110988bbf8c0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,6 +35,7 @@
           <entry key="js" value="5" />
           <entry key="json" value="1" />
           <entry key="log" value="2" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -42,7 +45,7 @@
           <entry key="Handlebars/Mustache" value="1" />
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="5" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -51,8 +54,9 @@
           <entry key="hbs" value="1301" />
           <entry key="html" value="527" />
           <entry key="index" value="39" />
-          <entry key="js" value="996" />
+          <entry key="js" value="1157" />
           <entry key="json" value="1" />
+          <entry key="txt" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -61,7 +65,8 @@
           <entry key="HTML" value="566" />
           <entry key="Handlebars/Mustache" value="1301" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="996" />
+          <entry key="JavaScript" value="1157" />
+          <entry key="PLAIN_TEXT" value="13" />
         </counts>
       </usages-collector>
     </session>
@@ -80,8 +85,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+            <state relative-caret-position="195">
+              <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -140,6 +154,7 @@
         <option value="$PROJECT_DIR$/jquery-3.3.1.min.js" />
         <option value="$PROJECT_DIR$/views/jquery-3.3.1.min.js" />
         <option value="$PROJECT_DIR$/views/home.hbs" />
+        <option value="$PROJECT_DIR$/server.txt" />
         <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
@@ -255,12 +270,12 @@
       <workItem from="1541554379660" duration="5910000" />
       <workItem from="1542229375306" duration="605000" />
       <workItem from="1542246544732" duration="6721000" />
-      <workItem from="1542309533741" duration="15302000" />
+      <workItem from="1542309533741" duration="16529000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28538000" />
+    <option name="totallyTimeSpent" value="29765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
@@ -331,13 +346,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-690">
@@ -345,10 +353,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        <state relative-caret-position="195">
+          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
         </state>
       </provider>
     </entry>
