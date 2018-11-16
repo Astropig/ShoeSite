@@ -72,13 +72,13 @@
 </div>
 <form id="messegeCreator" action="/" method="GET">
     <br>
-    <input type="radio" id="crawlBox" name="effectType" value="Crawl">Crawl<br>
-    <input type="radio" id="theaterBox" name="effectType" value="Theater">Theater<br>
-    <input type="radio" id="solidBox" name="effectType" value="Solid">Solid<br>
-    <input type="radio" id="rainbowBox" name="effectType" value="Rainbow" checked>Rainbow<br>
+    <input type="radio" id="crawlBox" name="effectType" value="Crawl" onchange="sliderChange()">Crawl<br>
+    <input type="radio" id="theaterBox" name="effectType" value="Theater" onchange="sliderChange()">Theater<br>
+    <input type="radio" id="solidBox" name="effectType" value="Solid" onchange="sliderChange()">Solid<br>
+    <input type="radio" id="rainbowBox" name="effectType" value="Rainbow" onchange="sliderChange()" checked >Rainbow<br>
     <input type="range" min="1" max="100" value="0" id="speedValue" oninput ="sliderChange()">
     <p>Output</p>
-    <input id="colorString" type="text" name="colorValue" value=" " required><br>
+    <input id="colorString" type="text" name="colorValue" value=" " readonly required><br>
     <input type="submit" value="Submit">
 </form>
 
