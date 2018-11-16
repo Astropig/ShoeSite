@@ -40,16 +40,21 @@ app.use((req, res, next) => {
 });
 //http.createServer
 app.get('/', (req, res) => {
-    fs.readFile('server.log', function read(err,data) {
-       if (err){
-           throw err;
-       }
-        res.render('home.hbs',{
-            currentColor: 'Current Value: ' + data
-        });
-        console.log(data);
+    try {
+        fs.readFile('server.log', function read(err,data) {
+            if (err){
+                throw err;
+            }
+            res.render('home.hbs',{
+                currentColor: 'Current Value: ' + data
+            });
+            console.log(data);
 
-    });
+        });
+    }catch (e) {
+        console.log('undifined');
+    }
+
 
 
 });
