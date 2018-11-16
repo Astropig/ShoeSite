@@ -10,7 +10,6 @@ var server = http.createServer(app);
 var io = socketIO(server);
 app.set('view engine', 'hbs');
 var mytext = " ";
-fs.appendFile('server.log', ' ' );
 
 io.on('connection', (socket) => {
    console.log("new user");
