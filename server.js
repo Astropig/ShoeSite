@@ -10,6 +10,7 @@ var server = http.createServer(app);
 var io = socketIO(server);
 app.set('view engine', 'hbs');
 var mytext = " ";
+fs.appendFile('server.log', ' ' );
 
 io.on('connection', (socket) => {
    console.log("new user");
@@ -19,6 +20,14 @@ io.on('connection', (socket) => {
            from: message.from,
            text: message.text
        });
+       var log = message.text;
+       try {
+           fs.unlink('server.log');
+           fs.appendFile('server.log', log );
+       }catch (e) {
+           fs.appendFile('server.log', log );
+       }
+
    })
 });
 
@@ -27,21 +36,22 @@ app.use((req, res, next) => {
     var log = `${now}: ${req.method} ${req.url} ${req.ip}`;
 
     console.log(log);
-    fs.appendFile('server.log', log + '\n', (err) => {
-        if (err){
-            console.log('unable to append');
-        }
-    });
     next();
 });
 //http.createServer
 app.get('/', (req, res) => {
-    mytext = req.query.colorValue;
-    console.log(mytext);
+    fs.readFile('server.log', function read(err,data) {
+       if (err){
+           throw err;
+       }
+        res.render('home.hbs',{
+            currentColor: 'Current Value: ' + data
+        });
+        console.log(data);
 
-    res.render('home.hbs',{
-        currentColor: 'Current Value: ' + mytext
     });
+
+
 });
 server.listen(port, () => {
     console.log(`Server is up on port ${port.toString()}`);
