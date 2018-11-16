@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 });
 //http.createServer
 app.get('/', (req, res) => {
-    try {
+    /*try {
         fs.readFile('server.log', function read(err,data) {
             if (err){
                 throw err;
@@ -52,8 +52,10 @@ app.get('/', (req, res) => {
         });
     }catch (e) {
         console.log('undifined');
-    }
-
+    }*/
+    res.render('home.hbs',{
+        currentColor: 'Current Value: ' + 'bob'
+    });
 
 
 });
