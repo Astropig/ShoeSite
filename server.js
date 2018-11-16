@@ -20,12 +20,12 @@ io.on('connection', (socket) => {
            text: message.text
        });
        var log = message.text;
-       try {
+       /*try {
            fs.unlink('server.log');
            fs.appendFile('server.log', log );
        }catch (e) {
            fs.appendFile('server.log', log );
-       }
+       }*/
 
    })
 });
